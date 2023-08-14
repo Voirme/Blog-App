@@ -1,0 +1,60 @@
+@use "../../abstracts/fonts";
+
+.container {
+  display: flex;
+  gap: 0.5em;
+  width: 100%;
+  margin-bottom: 20px;
+
+  .articleImage {
+    position: relative;
+    width: 40%;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      transition: transform 500ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+
+  .articleDetails {
+    width: 60%;
+    padding-top: 5px;
+
+    .metadata {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      width: 100%;
+      height: 20px;
+
+      a {
+        background-color: rgb(240, 129, 240);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 7px;
+        font-weight: bold;
+      }
+
+      p {
+        color: rgb(104, 104, 104);
+      }
+    }
+
+    h3 {
+      font-family:fonts.$body-font;
+      font-size: 20px;
+      margin: 15px 0 0;
+    }
+  }
+}

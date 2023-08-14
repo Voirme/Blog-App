@@ -1,0 +1,109 @@
+@use "../../abstracts/fonts";
+
+.header {
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    position: relative;
+    font-family: fonts.$body-font;
+    font-weight: 800;
+    font-size: 32px;
+    margin-bottom: 50px;
+    text-align: center;
+
+    span {
+      background: linear-gradient(to right, #a238c7, #ac42cf, #b74bd7, #c155df, #cc5ee7, #d364e9, #da6aec, #e170ee, #e674eb, #ea79e9, #ee7de6, #f282e4);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      height: 40px;
+      padding-top: 5px;
+      overflow: hidden;
+      width: 100%;
+
+      .animate {
+        display: flex;
+        flex-direction: column;
+        // height: 168px;
+        animation: animateText 5s infinite linear;
+
+        span {
+          height: 50px;
+          margin: 5px 0;
+          font-weight: 900;
+          background-image: linear-gradient(to right, #a238c7, #ac42cf, #b74bd7, #c155df, #cc5ee7, #d364e9, #da6aec, #e170ee, #e674eb, #ea79e9, #ee7de6, #f282e4);
+          background: linear-gradient(to right, #a238c7, #ac42cf, #b74bd7, #c155df, #cc5ee7, #d463e7, #dc69e7, #e46fe7, #e973df, #ed77d8, #f07dd1, #f282cb);
+          background: linear-gradient(to right, #a238c7, #af40cd, #bd48d3, #ca51da, #d759e0, #de5bdf, #e55edf, #ec60de, #ee5ed5, #f05ccd, #f15ac5, #f259bd);
+          background: radial-gradient(circle, #a238c7, #af40cd, #bd48d3, #ca51da, #d759e0, #de5bdf, #e55edf, #ec60de, #ee5ed5, #f05ccd, #f15ac5, #f259bd);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 40px;
+
+    span  {
+      font-weight: 700;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background-color: #e674eb;
+    background-color: #b74bd7;
+    padding: 12px 25px;
+    color: #fff;
+    border-radius: 22px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+}
+
+@keyframes animateText {
+  0% {
+    margin-top: -250px;
+  }
+  5% {
+    margin-top: -120px;
+  }
+  33% {
+    margin-top: -120px;
+  }
+  38% {
+    margin-top: 0px;
+  }
+  66% {
+    margin-top: 0px;
+  }
+  71% {
+    margin-top: 120px;
+  }
+  99.99% {
+    margin-top: 120px;
+  }
+  100%{
+    margin-top: -250px;
+  }
+}
+
+

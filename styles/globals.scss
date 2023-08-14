@@ -1,0 +1,433 @@
+@use "../abstracts/fonts";
+@use "../abstracts/colors";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  background-color: #fff;
+  scroll-behavior: smooth;
+  max-width: 1666px;
+  font-family: fonts.$body-font;
+  overflow-X: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: fonts.$header-font, sans-serif;
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+// ******************* NAVBAR ***********************
+.navbar{
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.97);
+  font-family: fonts.$body-font;
+  font-size: clamp(14px, 10vw, 16px);
+  padding: 10px;
+  width: 100%;
+  max-width: 1666px;
+  height: 70px;
+  z-index: 1000;
+  overflow: hidden;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10em;
+    padding: 13px 30px;
+    border-radius: 30px;
+    background-color: colors.$secondary-color;
+    color: colors.$primary-color;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+
+    .telegramPlane {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.voirme {
+  min-width: 100px;
+  max-width: 100px;
+  margin-left: 8em;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  .navIcon {
+    display: none;
+  }
+
+  li {
+    position: relative;
+    margin: 1.2em;
+    padding: 5px 3px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #000;
+
+    &:hover {
+      color: colors.$secondary-color;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+
+    &.active {
+      color: colors.$secondary-color;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+}
+
+.icon {
+  display: none;
+}
+
+.profile {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+
+  .navbar {
+    height: 50px;
+    overflow: hidden;
+
+    button {
+      margin-right: 2em;
+    }
+  }
+
+  .voirme {
+    margin: 0 auto;
+  }
+
+	.mainContainer{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 50%;
+    max-width: 350px;
+		display: flex;
+		flex-direction: column;
+		// align-items: center;
+		// justify-content: center;
+		gap: 1.5rem;
+		background-color: white;
+		transition: 1s;
+
+    .icon {
+      color: colors.$secondary-color;
+      font-size: 30px;
+    }
+
+
+
+	}
+
+  .mainContainer.open {
+    transform: translateX(-50vw);
+  }
+
+  .list {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 4em 0 0 1em;
+    padding: 0;
+
+    .navIcon {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    li {
+      margin: 0 0 1em;
+      color: rgb(24, 24, 24);
+    }
+  }
+
+  .hamburger {
+    transform: scale(0.75);
+    position: absolute;
+    left: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 3px;
+
+    &:nth-of-type(2) {
+      width: 33px;
+    }
+
+    &:nth-of-type(3) {
+      width: 25px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .navbar {
+    button {
+      display: none;
+    }
+  }
+
+  .list {
+    li {
+      font-weight: 600;
+      font-size: 0.8em;
+    }
+  }
+
+  .hamburger {
+    left: 3px;
+  }
+}
+
+// ################# End of Navbar ############
+
+
+.navbarHeaderImage{
+  display: none;
+}
+
+.icon {
+  display: none;
+}
+
+.message {
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2em;
+  margin-top: 4.5em;
+  background-color: rgb(191, 248, 191);
+  overflow: hidden;
+
+  h3 {
+    font-size: 0.9em;
+    margin: 0;
+  }
+}
+
+// -------------- Navbar Image --------------
+@media screen and (max-width: 768px) {
+  .navigation {
+
+    .icon {
+      display: block;
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      font-weight: 700;
+      font-size: 35px;
+      cursor: pointer;
+      width: max-content;
+      color: colors.$secondary-color;
+    }
+
+    .mainContainer {
+      position: absolute;
+      width: 100%;
+      margin: 5em auto 3em;
+      border-radius: 10px;
+      border: 2px solid red;
+    }
+
+    .navbarHeaderImage {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 10vh;
+      background-color: rgba(255, 200, 210, 0.25);
+
+      .navbarImageHeaderContainer {
+        width: 70px;
+        height: 70px;
+
+        .navbarImage {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navigation {
+    .mainContainer {
+      position: absolute;
+      width: 80%;
+      margin: 5em 2em 3em 1em;
+      border: 2px solid red;
+    }
+
+  .navbarHeaderImage {
+    height: 10vh;
+
+    .navbarImageHeaderContainer {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+}
+
+// ############## end of navbar image #######################
+
+
+// -------------- Toast Container ----------------------
+@media screen and (max-width: 500px) {
+  .Toastify__toast-container {
+    max-width: 250px;
+    font-size: 0.9em;
+    height: 10px;
+  }
+
+  .Toastify__toast-body {
+    height: 10px;
+  }
+}
+
+
+// ******************* HEADER AND BLOB *********************
+
+.header {
+  margin-bottom: 3em;
+
+  .blob {
+    position: absolute;
+    background-color: rgba(252, 132, 158, 0.15);
+    border-radius: 50%;
+
+    &.one {
+      top: 400px;
+      left: -300px;
+      width: 400px;
+      height: 400px;
+    }
+
+    &.two {
+      top: -230px;
+      right: -300px;
+      width: 400px;
+      height: 400px;
+      z-index: 1000;
+    }
+
+    &.three {
+      top: 650px;
+      right: 50px;
+      width: 50px;
+      height: 50px;
+    }
+
+    &.four {
+      top: 640px;
+      right: 100px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+
+    .circleOne, .circleTwo, .circleThree {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+      border: 3px solid rgb(252, 132, 158);
+      border-radius: 50%;
+    }
+
+    .circleOne {
+      width: 250px;
+      height: 250px;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .circleTwo {
+      display: none;
+    }
+
+    .circleThree {
+      width: 250px;
+      height: 250px;
+
+      .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

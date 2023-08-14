@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Sacramento&family=Satisfy&display=swap');
+
+.header {
+  position: relative;
+  background: url('../../public/header-banner.png') no-repeat center center/cover;
+  width: 100%;
+  height: 16em;
+  display: flex;
+  align-items: center;
+
+  .details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: calc(13.5em + 450px);
+    z-index: 1;
+    color: rgb(216, 216, 216);
+
+    h1 {
+      text-transform: capitalize;
+      font-size: 2.3em;
+    }
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: rgb(216, 216, 216);
+
+    .hero {
+      font-family: "Dancing Script", sans-serif;
+      font-size: 4.5em;
+    }
+  }
+
+
+
+  .imageContainer {
+    position: absolute;
+    top: 7em;
+    left: 13.5em;
+    width: 400px;
+    height: 350px;
+    background: no-repeat center center/cover;
+    border: 13px solid #fff;
+    z-index: 1;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .header {
+    .imageContainer,
+    .details,
+    .title {
+      display: none;
+    }
+  }
+}
